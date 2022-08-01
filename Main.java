@@ -528,9 +528,12 @@ public class Main {
             //second field is concept_name (type = varchar)
             String conceptName = "'" + fields[1] + "'";
 
+            //third field is concept_description (type = varchar)
+            String conceptDescription = "'" fields[2] + "'";
+
             //create the insert statement
-            String insertStatement = String.format("INSERT INTO concepts(concept_code, concept_name) " +
-                    "values(%s, %s)", conceptCode, conceptName);
+            String insertStatement = String.format("INSERT INTO concepts(concept_code, concept_name, concept_description) " +
+                    "values(%s, %s)", conceptCode, conceptName, conceptDescription);
 
             try{
                 statement.executeUpdate(insertStatement);
